@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "lvgl/lvgl.h"
+#include "lvgl/demos/lv_demos.h"
 #include "ui/ui.h"
 
 /*********************
@@ -67,13 +68,14 @@ int main(int argc, char **argv) {
     /*Initialize the display, and the input devices*/
     hal_init( 800, 480 );
 
-    ui_init();
+    // ui_init();
+    lv_demo_benchmark();
 
     while(1) {
         /* Periodically call the lv_task handler.
         * It could be done in a timer interrupt or an OS task too.*/
         lv_timer_handler();
-        usleep(5 * 1000);
+        usleep(4 * 1000);
     }
 
     lv_deinit();
