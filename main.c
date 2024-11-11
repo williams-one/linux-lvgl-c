@@ -42,7 +42,12 @@ int main(int argc, char** argv) {
 
     hal_init(800, 480);
 
-    lv_demo_benchmark();
+    // lv_demo_benchmark();
+
+    LV_IMAGE_DECLARE(gear_solid2);
+    lv_obj_t * img1 = lv_image_create(lv_screen_active());
+    lv_image_set_src(img1, &gear_solid2);
+    lv_obj_align(img1, LV_ALIGN_CENTER, 0, 0);
 
     while(1) {
         lv_timer_handler();

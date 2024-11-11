@@ -17,7 +17,7 @@ include_directories(
 )
 
 FILE(GLOB_RECURSE LVGL_Sources CONFIGURE_DEPENDS lvgl/*.c)
-FILE(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)
+FILE(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS images/*.c images/*.cpp)
 
 add_executable(${PROJECT_NAME} main.c ${LVGL_Sources} ${UI_Sources})
 

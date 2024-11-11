@@ -1,0 +1,1 @@
+python3 lvgl/scripts/LVGLImage.py gear-solid2.png --ofmt C --output . --cf I8
