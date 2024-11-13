@@ -1,20 +1,9 @@
-/**
- * @file main
- *
- */
-
-#define _DEFAULT_SOURCE /* needed for usleep() */
 #include <stdlib.h>
 #include <unistd.h>
 #include "lvgl/lvgl.h"
 #include "lvgl/demos/lv_demos.h"
 
-/**
- * Initialize the Hardware Abstraction Layer (HAL) for the LVGL graphics
- * library
- */
-
-static lv_display_t* hal_init (int32_t w, int32_t h) {
+static lv_display_t* hal_init(int32_t w, int32_t h) {
     lv_group_set_default(lv_group_create());
 
     lv_display_t* disp = lv_sdl_window_create(w, h);
@@ -42,12 +31,7 @@ int main(int argc, char** argv) {
 
     hal_init(800, 480);
 
-    // lv_demo_benchmark();
-
-    LV_IMAGE_DECLARE(gear_solid2);
-    lv_obj_t * img1 = lv_image_create(lv_screen_active());
-    lv_image_set_src(img1, &gear_solid2);
-    lv_obj_align(img1, LV_ALIGN_CENTER, 0, 0);
+    lv_demo_benchmark();
 
     while(1) {
         lv_timer_handler();
